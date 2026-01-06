@@ -5,8 +5,41 @@ html {
 body {
     margin: 0;
     font-family: Arial;
-    background: url(../img/bg.png) center / cover;
+    background: url(../img/backgr.png) center / cover no-repeat;
     color: #fff;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(../img/backboll.png) no-repeat;
+    width: 100%;
+    height: 0%;
+    right: 0;
+    bottom: 0;
+    background-position: right;
+    z-index: -1;
+    background-size: contain;
+}
+
+@media screen and (min-width: 500px) {
+    body::before {
+        height: 60%;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    body::before {
+        height: 80%;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    body::before {
+        height: 90%;
+    }
 }
 
 p {
@@ -25,13 +58,6 @@ p {
     justify-content: center;
 }
 
-@media screen and (min-width: 920px) {
-    .adaptive {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
 .menu {
     list-style: none;
     margin: 0;
@@ -46,6 +72,13 @@ p {
 
 .header-line {
     padding: 27rem 0;
+    align-items: end;
+}
+
+@media screen and (min-width: 920px) {
+    .header-line {
+        align-items: center;
+    }
 }
 
 .burger-menu {
@@ -76,7 +109,19 @@ p {
     top: -6rem;
 }
 
+@media screen and (min-width: 920px) {
+    .adaptive {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    span.burger-menu {
+        display: none;
+    }
+}
+
 div.flex {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,9 +160,13 @@ div.flex {
     text-decoration: underline;
 }
 
-@media screen and (min-width: 440px) {
+@media screen and (min-width: 920px) {
     .aboutUs {
         display: block;
+    }
+
+    div.flex {
+        width: auto;
     }
 }
 
@@ -139,7 +188,13 @@ div.flex {
 }
 
 .main {
-    padding: 125rem 0 130rem;
+    padding: 40rem 0 70rem;
+}
+
+@media screen and (min-width: 920px) {
+    .main {
+        padding: 125rem 0 130rem;
+    }
 }
 
 .main i {
@@ -152,6 +207,19 @@ div.flex {
     font-size: 30rem;
     text-transform: uppercase;
     font-weight: bold;
+    text-shadow: none;
+}
+
+@media screen and (min-width: 620px) {
+    .main h1 {
+        text-shadow: 3px 1px 1px black;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .main h1 {
+        text-shadow: none;
+    }
 }
 
 .desc {
@@ -167,7 +235,7 @@ div.flex {
     display: block;
     border: 3rem solid #f4d633;
     padding: 21.5rem 20rem;
-    font-size: 18rem;
+    font-size: 16rem;
     color: #f4d633;
     text-transform: uppercase;
     text-decoration: none;
@@ -177,6 +245,12 @@ div.flex {
     margin-bottom: 32rem;
     transition: 0.2s;
     text-align: center;
+}
+
+@media screen and (min-width: 350px) {
+    .maim a {
+        font-size: 18rem;
+    }
 }
 
 .button {
